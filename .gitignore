@@ -1,0 +1,22 @@
+#############
+## IntelliJ IDEA
+#############
+*.class
+.gradle/
+.idea/
+*.iml
+
+lib
+filter.properties
+run/resin.sh
+out
+log
+logs
+trlog
+build
+src/target
+target
+reports
+.DS_Store
+.gitignore
+src/
