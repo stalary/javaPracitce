@@ -127,6 +127,7 @@ class User implements Comparable<User> {
         this.age = age;
     }
 
+    @Override
     public String toString() {
         return getClass().getSimpleName() + "[name=" + name + ",age=" + age + ",sex=" + sex + "]";
     }
