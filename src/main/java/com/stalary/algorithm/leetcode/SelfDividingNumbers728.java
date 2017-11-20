@@ -47,4 +47,39 @@ public class SelfDividingNumbers728 {
         }
     }
 
+
+    /**
+     * 第二种解法，求出每一位再进行判断
+     */
+    public static List<Integer> selfDividingNumbers(int left, int right) {
+        List<Integer> list = new ArrayList<>();
+        for (int i = left; i <= right; i++) {
+            boolean judge = true;
+            if (i % 10 == 0) {
+                judge = false;
+                continue;
+            }
+            int temp = i;
+            while (temp > 10) {
+                if (temp % 10 == 0) {
+                    judge = false;
+                    break;
+                }
+                if (i % (temp % 10) != 0) {
+                    judge = false;
+                    break;
+                }
+                temp /= 10;
+            }
+            if (i % temp != 0) {
+                judge = false;
+                continue;
+            }
+            if (judge) {
+                list.add(i);
+            }
+        }
+        return list;
+    }
+
 }
