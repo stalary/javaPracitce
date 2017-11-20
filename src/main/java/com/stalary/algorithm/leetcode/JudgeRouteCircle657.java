@@ -9,6 +9,8 @@ package com.stalary.algorithm.leetcode;
 /**
  * JudgeRouteCircle657
  *
+ * 判断做的运动是否能够回到原点
+ * R向右，L向左，U向上，D向下
  * @author lirongqian
  * @since 2017/11/15
  */

@@ -11,6 +11,7 @@ import java.util.Scanner;
 /**
  * HammingDistance
  *
+ * 求两个数字的异或后一共有多少个1
  * @author lirongqian
  * @since 2017/11/9
  */

@@ -11,6 +11,7 @@ import java.util.Arrays;
 /**
  * ArrayPartitionI561
  *
+ * 求两个数之间较小数的所有数字和
  * @author lirongqian
  * @since 2017/11/15
  */
