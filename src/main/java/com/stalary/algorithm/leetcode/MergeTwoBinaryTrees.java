@@ -9,7 +9,7 @@ package com.stalary.algorithm.leetcode;
 /**
  * MergeTwoBinaryTrees
  *
- * 合并两颗二叉树的值
+ * 合并两颗二叉树的值，通过递归进行每一层的合并
  * @author lirongqian
  * @since 2017/11/15
  */
