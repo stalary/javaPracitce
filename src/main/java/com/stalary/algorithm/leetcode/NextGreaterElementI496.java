@@ -7,10 +7,14 @@
 package com.stalary.algorithm.leetcode;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
 
 /**
  * NextGreaterElementI496
  *
+ * 将第一个数组中的元素去第二个数组中查找，查找是否在后面存在比它小的数
  * @author lirongqian
  * @since 2017/11/21
  */
@@ -18,10 +22,10 @@ public class NextGreaterElementI496 {
 
     public static void main(String[] args) {
         int[] nums1 = {
-                1, 3, 5, 2, 4
+                4, 1, 2
         };
         int[] nums2 = {
-                6, 5, 4, 3, 2, 1, 7
+                1, 3, 4, 2
         };
         int[] nums3 = new int[nums1.length];
         for (int i = 0; i < nums1.length; i++) {
@@ -50,12 +54,26 @@ public class NextGreaterElementI496 {
         }
     }
 
-    public static int search(int[] a, int key) {
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] == key) {
-                return i;
+    /**
+     * 找出递增子序列即能完成，所以将元素入栈，将比下一个元素小的出栈，存入map中
+     *
+     * @param findNums
+     * @param nums
+     * @return
+     */
+    public static int[] nextGreaterElement(int[] findNums, int[] nums) {
+        // map from x to next greater element of x
+        Map<Integer, Integer> map = new HashMap<>();
+        Stack<Integer> stack = new Stack<>();
+        for (int num : nums) {//1,3,4,2
+            while (!stack.isEmpty() && stack.peek() < num) {
+                map.put(stack.pop(), num);
             }
+            stack.push(num);
         }
-        return -1;
+        for (int i = 0; i < findNums.length; i++) {
+            findNums[i] = map.getOrDefault(findNums[i], -1);
+        }
+        return findNums;
     }
 }
