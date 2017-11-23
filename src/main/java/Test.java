@@ -1,5 +1,9 @@
+import com.stalary.algorithm.algorithmbook.In;
+
 import java.io.IOException;
 import java.util.*;
+import java.util.function.*;
+import java.util.stream.Stream;
 
 /**
  * @Author: Stalary
@@ -10,7 +14,10 @@ public class Test {
 
 
     public static void main(String[] args) throws IOException {
-
+        Set<Integer> set = new HashSet<>();
+        set.add(1);
+        set.add(1);
+        System.out.println(set);
     }
 
 
