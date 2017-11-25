@@ -11,6 +11,7 @@ import java.util.HashMap;
 /**
  * FindTheDifference389
  *
+ * 将第一个字符串打乱顺序，并且加入一个元素，查找新加入的元素
  * @author lirongqian
  * @since 2017/11/25
  */
@@ -42,5 +43,22 @@ public class FindTheDifference389 {
             }
         }
         return t.charAt(0);
+    }
+
+    /**
+     * 使用位运算，来查找不一致的字符
+     * @param s
+     * @param t
+     * @return
+     */
+    public static char findTheDifference1(String s, String t) {
+        char c = 0;
+        for (int i = 0; i < s.length(); ++i) {
+            c ^= s.charAt(i);
+        }
+        for (int i = 0; i < t.length(); ++i) {
+            c ^= t.charAt(i);
+        }
+        return c;
     }
 }
