@@ -1,0 +1,46 @@
+/**
+ * @(#)FindTheDifference389.java, 2017-11-25.
+ * <p>
+ * Copyright 2017 Youdao, Inc. All rights reserved.
+ * YOUDAO PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ */
+package com.stalary.algorithm.leetcode;
+
+import java.util.HashMap;
+
+/**
+ * FindTheDifference389
+ *
+ * @author lirongqian
+ * @since 2017/11/25
+ */
+public class FindTheDifference389 {
+
+    public static void main(String[] args) {
+        System.out.println(findTheDifference("abicdiefgh", "abideiicfhg"));
+    }
+
+    public static char findTheDifference(String s, String t) {
+        HashMap<Character, Integer> map = new HashMap<>(s.length());
+        for (int i = 0; i < s.length(); i++) {
+            char temp = s.charAt(i);
+            if (map.containsKey(temp)) {
+                map.put(temp, map.get(temp) + 1);
+            } else {
+                map.put(temp, 1);
+            }
+        }
+        for (int i = 0; i < t.length(); i++) {
+            char temp = t.charAt(i);
+            if (!map.containsKey(temp)) {
+                return t.charAt(i);
+            } else {
+                if (map.get(temp) == 0) {
+                    return t.charAt(i);
+                }
+                map.put(temp, map.get(temp) - 1);
+            }
+        }
+        return t.charAt(0);
+    }
+}
