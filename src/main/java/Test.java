@@ -14,10 +14,9 @@ public class Test {
 
 
     public static void main(String[] args) throws IOException {
-        int[] arr = new int[]{
-                4, 2, 3
-        };
+
     }
+
 
 }
 
