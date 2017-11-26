@@ -80,7 +80,7 @@ public class Sort {
                 }
             }
             // 每次步长减半
-            feet = feet >> 2;
+            feet = feet >> 1;
         }
         return a;
     }
