@@ -8,8 +8,9 @@ package com.stalary.algorithm.leetcode;
 
 /**
  * BinaryNumberWithAlternatingBits693
- *
+ * <p>
  * 输入一个正数，转化为二进制，判断是否为跳跃式
+ *
  * @author lirongqian
  * @since 2017/11/22
  */
