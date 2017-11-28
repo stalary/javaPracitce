@@ -13,7 +13,7 @@ package com.stalary.algorithm.leetcode;
  * @author lirongqian
  * @since 2017/11/27
  */
-public class ConvertBSTToGreaterTree {
+public class ConvertBSTToGreaterTree538 {
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(5);

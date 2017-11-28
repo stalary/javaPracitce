@@ -46,8 +46,6 @@ public class ConsumerTest {
         props.put("zookeeper.session.timeout.ms", "400");
         props.put("zookeeper.sync.time.ms", "200");
         props.put("auto.commit.interval.ms", "1000");
-        ;
-
         Map<String, Integer> topicCountMap = new HashMap<String, Integer>();
         //每个topic使用多少个kafkastream读取, 多个consumer
         topicCountMap.put(TOPIC, THREAD_AMOUNT);
