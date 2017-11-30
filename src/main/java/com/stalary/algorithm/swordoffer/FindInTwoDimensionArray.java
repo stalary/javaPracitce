@@ -9,6 +9,7 @@ package com.stalary.algorithm.swordoffer;
 /**
  * FindInTwoDimensionArray
  *
+ * 二维数组中的查找，因为每一行递增，每一列递增，所以右下角是最大的
  * @author lirongqian
  * @since 2017/11/27
  */
