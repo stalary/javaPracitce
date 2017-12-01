@@ -6,6 +6,8 @@
  */
 package com.stalary.algorithm.leetcode;
 
+import java.util.HashMap;
+
 /**
  * SingleNumber136
  *
@@ -19,7 +21,7 @@ public class SingleNumber136 {
         int[] nums = {
                 1,2,2,3,1
         };
-        System.out.println(singleNumber(nums));
+        System.out.println(singleNumber1(nums));
     }
 
     public static int singleNumber(int[] nums) {
@@ -28,5 +30,22 @@ public class SingleNumber136 {
             ans ^= nums[i];
         }
         return ans;
+    }
+
+    public static int singleNumber1(int[] nums) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int n : nums) {
+            if (map.containsKey(n)) {
+                map.put(n, map.get(n) + 1);
+            } else {
+                map.put(n, 1);
+            }
+        }
+        for (int n : nums) {
+            if (map.get(n) == 1) {
+                return n;
+            }
+        }
+        return 0;
     }
 }

@@ -7,13 +7,13 @@
 package com.stalary.algorithm.leetcode;
 
 /**
- * MergeTwoBinaryTrees
+ * MergeTwoBinaryTrees617
  *
  * 合并两颗二叉树的值，通过递归进行每一层的合并
  * @author lirongqian
  * @since 2017/11/15
  */
-public class MergeTwoBinaryTrees {
+public class MergeTwoBinaryTrees617 {
 
     public static void main(String[] args) {
 
