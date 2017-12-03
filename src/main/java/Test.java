@@ -19,9 +19,12 @@ public class Test {
         list.add(1);
         list.add(3);
         list.add(1, 5);
-        System.out.println(list.poll());
-        System.out.println(list);
-
+//        System.out.println(list.poll());
+//        System.out.println(list);
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(2, 1);
+        System.out.println(map.putIfAbsent(2,3));
+        System.out.println(map.get(2));
 
     }
 }

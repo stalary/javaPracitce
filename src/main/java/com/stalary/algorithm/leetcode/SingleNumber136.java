@@ -31,7 +31,7 @@ public class SingleNumber136 {
         }
         return ans;
     }
-
+    
     public static int singleNumber1(int[] nums) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int n : nums) {
