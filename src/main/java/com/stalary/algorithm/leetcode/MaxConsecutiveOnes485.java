@@ -16,9 +16,9 @@ public class MaxConsecutiveOnes485 {
 
     public static void main(String[] args) {
         int[] nums = new int[]{
-                1, 1, 0, 1, 1, 1
+                0, 0
         };
-        System.out.println(findMaxConsecutiveOnes1(nums));
+        System.out.println(findMaxConsecutiveOnes2(nums));
     }
 
     public static int findMaxConsecutiveOnes(int[] nums) {
@@ -40,6 +40,28 @@ public class MaxConsecutiveOnes485 {
         int max = 0;
         for (int i = 0, cnt = 0; i < nums.length; i++) {
             max = (cnt = nums[i] == 1 ? cnt + 1 : 0) > max ? cnt : max;
+        }
+        return max;
+    }
+
+    /**
+     * 超时！
+     * @param nums
+     * @return
+     */
+    public static int findMaxConsecutiveOnes2(int[] nums) {
+
+        String str = "";
+        for (int n : nums) {
+            str += n;
+        }
+        if (str.matches("^0*$")) {
+            return 0;
+        }
+        String[] out = str.split("0");
+        int max = out[0].length();
+        for (int i = 0; i < out.length; i++) {
+            max = max > out[i].length() ? max : out[i].length();
         }
         return max;
     }
