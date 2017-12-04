@@ -1,6 +1,8 @@
 import com.stalary.algorithm.algorithmbook.In;
 
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.Stream;
@@ -15,17 +17,14 @@ public class Test {
 
     public static void main(String[] args) throws Exception {
 
-        LinkedList<Integer> list = new LinkedList<>();
-        list.add(1);
-        list.add(3);
-        list.add(1, 5);
-//        System.out.println(list.poll());
-//        System.out.println(list);
-        HashMap<Integer, Integer> map = new HashMap<>();
-        map.put(2, 1);
-        System.out.println(map.putIfAbsent(2,3));
-        System.out.println(map.get(2));
-
+        Map<String, Object> map = new HashMap<>();
+        List<String> pic = new ArrayList<>();
+        pic.add("http://1221312");
+        pic.add("http://321321321");
+        map.put("userScore", 5);
+        map.put("images", pic);
+        map.put("expanation", "坚持就是胜利，“坚持”即为本题中的量的积累，量变引起质变，坚持导致胜利，揭示的是B选项，量变必然引起质变");
+        System.out.println(map.toString());
     }
 }
 
