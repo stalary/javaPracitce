@@ -9,6 +9,7 @@ package com.stalary.algorithm.leetcode;
 /**
  * AddDigits258
  *
+ * 将每个数字重复相加，直到只有一位数字
  * @author lirongqian
  * @since 2017/11/25
  */

@@ -6,8 +6,6 @@
  */
 package com.stalary.algorithm.leetcode;
 
-import java.util.stream.Stream;
-
 /**
  * DetectCapital520
  * 仅在全为大写字母或者全为小写字母，或者仅首字母大写时返回true

@@ -9,6 +9,7 @@ package com.stalary.algorithm.leetcode;
 /**
  * RomanToInteger13
  *
+ * 将罗马数字转化为数值，注意几个特殊的位置需要减去相应的数字
  * @author lirongqian
  * @since 2017/12/5
  */
