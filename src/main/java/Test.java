@@ -1,11 +1,7 @@
-import com.stalary.algorithm.algorithmbook.In;
+import com.google.gson.Gson;
 
-import java.io.IOException;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.Stream;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @Author: Stalary
@@ -16,12 +12,16 @@ public class Test {
 
 
     public static void main(String[] args) throws Exception {
-        Map<Integer, Integer> map = new HashMap<>();
-        map.put(1, map.getOrDefault(1, 0) + 1);
-        map.put(2, map.getOrDefault(2, 0) + 1);
-        map.put(1, map.getOrDefault(1, 0) + 1);
-        map.put(1, map.getOrDefault(1, 0) + 1);
-        System.out.println(map);
+        String str = "{explanation=我是答案解析-------------, images=[https://oimagec5.ydstatic.com/image?id=-3501435359107303037&product=xue, https://oimagec4.ydstatic.com/image?id=7291802918549390501&product=xue, https://oimagec4.ydstatic.com/image?id=7291802918549390501&product=xue], userScore=3}";
+        str = str.substring(1, str.length() - 1);
+        String pattern1 = "explanation=(.*?), images=(.*), userScore=(.*)";
+        Pattern pattern = Pattern.compile(pattern1);
+        Matcher matcher = pattern.matcher(str);
+        if (matcher.find()) {
+            System.out.println(matcher.group(1));
+            System.out.println(matcher.group(2));
+            System.out.println(matcher.group(3));
+        }
     }
 
 
