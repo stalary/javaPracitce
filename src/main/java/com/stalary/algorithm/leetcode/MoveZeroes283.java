@@ -12,7 +12,7 @@ package com.stalary.algorithm.leetcode;
  * @author lirongqian
  * @since 2017/11/25
  */
-public class MoveZeroes238 {
+public class MoveZeroes283 {
 
     public static void main(String[] args) {
         int[] nums = new int[]{

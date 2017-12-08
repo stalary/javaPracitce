@@ -26,15 +26,11 @@ public class ThreadDemo implements Runnable {
         }
     }
 
-    public class PrivateClass {
-
-    }
 
     public static void main(String[] args) throws Exception {
-        PrivateClass privateClass = new ThreadDemo().new PrivateClass();
         ThreadDemo instance = new ThreadDemo();
-        Thread t1 = new Thread(new ThreadDemo());
-        Thread t2 = new Thread(new ThreadDemo());
+        Thread t1 = new Thread(instance);
+        Thread t2 = new Thread(instance);
 //        Thread t1 = new Thread(instance);
 //        Thread t2 = new Thread(instance);
         t1.start();
