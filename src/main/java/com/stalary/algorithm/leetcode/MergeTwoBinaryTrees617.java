@@ -32,14 +32,5 @@ public class MergeTwoBinaryTrees617 {
         return t1;
     }
 
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
 }

@@ -29,16 +29,6 @@ public class TwoSumIVInputIsABST653 {
         System.out.println(findTarget(root, 9));
     }
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
-
     public static boolean findTarget(TreeNode root, int k) {
         HashSet<Integer> set = new HashSet<>();
         return dfs(root, set, k);

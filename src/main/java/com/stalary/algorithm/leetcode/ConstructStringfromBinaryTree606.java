@@ -42,13 +42,4 @@ public class ConstructStringfromBinaryTree606 {
         return result + "(" + left + ")" + "(" + right + ")";
     }
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 }

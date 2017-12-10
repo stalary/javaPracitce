@@ -20,7 +20,6 @@ public class Sort {
             return a;
         }
         for (int i = 0; i < n - 1; i++) {
-            // 每个数依次进行比较，每轮比较都不用再比较已经拿出的较大数
             for (int j = 0; j < n - i - 1; j++) {
                 if (a[j] > a[j + 1]) {
                     swap(a, i, j);

@@ -25,13 +25,6 @@ public class SameTree100 {
         System.out.println(isSameTree(node1, node2));
     }
 
-    public static class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode(int x) { val = x; }
-  }
-
     public static boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == null && q == null) {
             return true;

@@ -40,13 +40,4 @@ public class SumOfLeftLeaves404 {
         return sum;
     }
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 }
