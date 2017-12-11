@@ -38,12 +38,4 @@ public class printListFromTailToHead {
         return list;
     }
 
-    static class ListNode {
-        int val;
-        ListNode next = null;
-
-        ListNode(int val) {
-            this.val = val;
-        }
-    }
 }

@@ -16,15 +16,6 @@ import retrofit2.http.HEAD;
  */
 public class ReverseLinkedList {
 
-    public class ListNode {
-        int val;
-        ListNode next = null;
-
-        ListNode(int val) {
-            this.val = val;
-        }
-    }
-
     public ListNode ReverseLinkedList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
