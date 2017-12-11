@@ -25,15 +25,6 @@ public class ConvertBSTToGreaterTree538 {
         System.out.println(out.right.val);
     }
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     static int sum = 0;
 

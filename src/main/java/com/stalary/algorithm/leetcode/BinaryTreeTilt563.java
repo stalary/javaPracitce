@@ -35,13 +35,4 @@ public class BinaryTreeTilt563 {
         return left + right + root.val;
     }
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 }
