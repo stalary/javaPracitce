@@ -6,11 +6,10 @@
  */
 package com.stalary.algorithm.leetcode;
 
-import com.sun.deploy.panel.TreeEditors;
-
 /**
  * ConvertSortedArrayToBinarySearchTree108
  *
+ * 将一个排好序的数组转化为一颗二叉搜索树
  * @author lirongqian
  * @since 2017/12/12
  */
@@ -39,6 +38,13 @@ public class ConvertSortedArrayToBinarySearchTree108 {
         return help(nums, 0, nums.length - 1);
     }
 
+    /**
+     * 每次取中点，代表根节点，然后依次取左儿子和右儿子进行赋值
+     * @param nums
+     * @param low
+     * @param high
+     * @return
+     */
     public static TreeNode help(int[] nums, int low, int high) {
         if (low > high) {
             return null;
