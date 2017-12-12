@@ -6,9 +6,8 @@
  */
 package com.stalary.runnable;
 
-import org.omg.PortableServer.THREAD_POLICY_ID;
-
-import java.util.Date;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * ThreadDemo
@@ -16,34 +15,42 @@ import java.util.Date;
  * @author lirongqian
  * @since 2017/12/3
  */
-public class ThreadDemo implements Runnable {
+public class ThreadDemo extends Thread {
 
     static int i = 0;
 
-    void increase() {
-        synchronized (ThreadDemo.class) {
-            i++;
-        }
-    }
-
+    private MyService myService;
 
     public static void main(String[] args) throws Exception {
-        ThreadDemo instance = new ThreadDemo();
-        Thread t1 = new Thread(instance);
-        Thread t2 = new Thread(instance);
+        MyService service = new MyService();
+        ThreadDemo i1 = new ThreadDemo(new MyService());
+        ThreadDemo i2 = new ThreadDemo(new MyService());
 //        Thread t1 = new Thread(instance);
 //        Thread t2 = new Thread(instance);
-        t1.start();
-        t2.start();
-        t1.join();
-        t2.join();
-        System.out.println(i);
+        i1.start();
+        i2.start();
+    }
+
+    public ThreadDemo(MyService myService) {
+        super();
+        this.myService = myService;
     }
 
     @Override
     public void run() {
-        for (int j = 0; j < 1000000; j++) {
-            increase();
+        myService.testMethod();
+    }
+}
+
+class MyService {
+
+    private Lock lock = new ReentrantLock();
+
+    public void testMethod() {
+        lock.lock();
+        for (int i = 0; i < 10; i++) {
+            System.out.println("ThreadName = " + Thread.currentThread().getName() + " " + "i = " + i);
         }
+        lock.unlock();
     }
 }
