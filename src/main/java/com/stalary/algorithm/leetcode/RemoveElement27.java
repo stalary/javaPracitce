@@ -19,6 +19,7 @@ public class RemoveElement27 {
         int[] nums = new int[]{
                 3, 2, 2, 3
         };
+
         System.out.println(new RemoveElement27().removeElement(nums, 3));
     }
 

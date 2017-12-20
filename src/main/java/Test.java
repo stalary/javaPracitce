@@ -9,8 +9,7 @@ import java.util.Date;
 public class Test {
 
     public static void main(String[] args) {
-        System.out.println(DateFormat.getDateInstance(DateFormat.LONG).format(new Date()));
-
+//        System.out.println(new Date().getTime());
     }
 }
 
