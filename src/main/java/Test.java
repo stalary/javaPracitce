@@ -1,8 +1,5 @@
-import com.google.gson.Gson;
-
-import java.sql.Timestamp;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.text.DateFormat;
+import java.util.Date;
 
 /**
  * @Author: Stalary
@@ -12,22 +9,8 @@ import java.util.regex.Pattern;
 public class Test {
 
     public static void main(String[] args) {
-        Test t = new Test();
-        t.start();
-    }
-    void start() {
-        Two two = new Two();
-        System.out.println(two.x + " ");
-        Two t2 = fix(two);
-        System.out.println(two.x + " " + t2.x);
-    }
-    Two fix(Two tt) {
-        tt.x = 42;
-        return tt;
-    }
-}
+        System.out.println(DateFormat.getDateInstance(DateFormat.LONG).format(new Date()));
 
-class Two {
-    Byte x;
+    }
 }
 

@@ -22,6 +22,11 @@ public class BitCharacters717 {
         System.out.println(isOneBitCharacter(bits));
     }
 
+    /**
+     * 10和11都是出现开头的1即可
+     * @param bits
+     * @return
+     */
     public static boolean isOneBitCharacter(int[] bits) {
         int i = 0;
         while (i < bits.length - 1) {
