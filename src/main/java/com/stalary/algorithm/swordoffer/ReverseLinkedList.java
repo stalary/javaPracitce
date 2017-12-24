@@ -6,8 +6,6 @@
  */
 package com.stalary.algorithm.swordoffer;
 
-import retrofit2.http.HEAD;
-
 /**
  * ReverseLinkedList
  *
