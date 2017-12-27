@@ -20,20 +20,30 @@ public class FfmpegDemo {
 
     public static void main(String[] args) throws Exception {
 
-        File source = new File("/Users/mac/Downloads/1.mp3");
-        File target = new File("/Users/mac/Downloads/test.mp3");
-        AudioAttributes audio = new AudioAttributes();
-        audio.setCodec("libmp3lame");
-        EncodingAttributes attrs = new EncodingAttributes();
-        attrs.setFormat("mp3");
-        attrs.setAudioAttributes(audio);
-        try {
-            Encoder encoder = new Encoder(new MyFFMPEGExecutableLocator());
-            encoder.encode(source, target, attrs);
-            Thread.sleep(5000);
-            target.delete();
-        } catch (IllegalArgumentException | EncoderException e) {
-            e.printStackTrace();
+
+//        File source = new File("/Users/mac/Downloads/1.webm");
+//        File target = new File("/Users/mac/Downloads/test.mp3");
+//        AudioAttributes audio = new AudioAttributes();
+//        audio.setCodec("libmp3lame");
+//        audio.setBitRate(128000);
+//        audio.setSamplingRate(44100);
+//        EncodingAttributes attrs = new EncodingAttributes();
+//        attrs.setFormat("mp3");
+//        attrs.setAudioAttributes(audio);
+//        try {
+//            Encoder encoder = new Encoder(new MyFFMPEGExecutableLocator());
+//            encoder.encode(source, target, attrs);
+//            // todo：待回调调用删除
+//        } catch (IllegalArgumentException | EncoderException e) {
+//            e.printStackTrace();
+//        }
+        String source = "/Users/mac/Downloads/1.webm";
+        String target = "/Users/mac/Downloads/test.mp3";
+        String cmd = "ffmpeg -i " + source + " -vn -ab 128k -ar 44100 -y " + target;
+        Process exec = Runtime.getRuntime().exec(cmd, null);
+        int status = exec.waitFor();
+        if (status != 0) {
+            System.err.println("Failed to call shell's command and the return status's is: " + status);
         }
     }
 
