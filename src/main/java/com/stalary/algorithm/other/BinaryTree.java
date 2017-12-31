@@ -106,12 +106,15 @@ public class BinaryTree {
      * 非递归实现中序遍历
      */  //思路与上面iterativePreorder 一致。
     protected static void iterativeInorder(Node p) {
-        Stack<Node> stack = new Stack<Node>();
+        Stack<Node> stack = new Stack<>();
         while (p != null) {
             while (p != null) {
-                if (p.getRight() != null)
-                    stack.push(p.getRight());// 当前节点右子入栈
-                stack.push(p);// 当前节点入栈
+                // 当前节点右子入栈
+                if (p.getRight() != null) {
+                    stack.push(p.getRight());
+                }
+                // 当前节点入栈
+                stack.push(p);
                 p = p.getLeft();
             }
             p = stack.pop();
@@ -120,10 +123,11 @@ public class BinaryTree {
                 p = stack.pop();
             }
             visit(p);
-            if (!stack.empty())
+            if (!stack.empty()) {
                 p = stack.pop();
-            else
+            } else {
                 p = null;
+            }
         }
     }
 
