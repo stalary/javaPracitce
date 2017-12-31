@@ -55,6 +55,7 @@ public class BinaryTreePrint {
                 queue.add(temp.right);
                 nlast = temp.right;
             }
+            // 当前层遍历完成
             if(last == temp) {
                 last = nlast;
                 result.add(level);

@@ -8,6 +8,7 @@ package com.stalary.algorithm.leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -38,7 +39,7 @@ public class BinaryTreeInorderTraversal94 {
         while (cur != null || !stack.isEmpty()) {
             // 找到最左边的子结点
             while (cur != null) {
-                stack.add(cur);
+                stack.push(cur);
                 cur = cur.left;
             }
             cur = stack.pop();
