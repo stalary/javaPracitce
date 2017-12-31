@@ -66,7 +66,6 @@ public class KthSmallestElementInABST230 {
             // 1 is counted as current node
             return kthSmallest(root.right, k-1-count);
         }
-
         return root.val;
     }
 
