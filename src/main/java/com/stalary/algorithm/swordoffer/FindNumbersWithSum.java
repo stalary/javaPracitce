@@ -12,14 +12,22 @@ import java.util.Set;
 
 /**
  * FindNumbersWithSum
+ * <p>
+ * 给定一个数组和一个数字，在数组中查找两个数字的和相加为目标值，如果多对，则输出乘积最小的一对
  *
- * 给定一个数组和一个数字，在数组中查找两个数字的和相加为目标值，如果多对，则输入乘积最小的一对
  * @author lirongqian
  * @since 31/12/2017
  */
 public class FindNumbersWithSum {
 
-    public ArrayList<Integer> FindNumbersWithSum(int [] array, int sum) {
+    /**
+     * set存储出现的值，如果存在一个目标值与当前值相减，则与乘积比较判断
+     *
+     * @param array
+     * @param sum
+     * @return
+     */
+    public ArrayList<Integer> FindNumbersWithSum(int[] array, int sum) {
         Set<Integer> set = new HashSet<>();
         for (int out : array) {
             set.add(out);
@@ -45,4 +53,33 @@ public class FindNumbersWithSum {
         list.add(b);
         return list;
     }
+
+    /**
+     * 通过头尾指针来进行判断，可以省去判断是否是最大值
+     *
+     * @param array
+     * @param sum
+     * @return
+     */
+    public ArrayList<Integer> FindNumbersWithSum1(int[] array, int sum) {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        if (array == null || array.length < 2) {
+            return list;
+        }
+        int i = 0, j = array.length - 1;
+        while (i < j) {
+            if (array[i] + array[j] == sum) {
+                list.add(array[i]);
+                list.add(array[j]);
+                return list;
+            } else if (array[i] + array[j] > sum) {
+                j--;
+            } else {
+                i++;
+            }
+
+        }
+        return list;
+    }
+
 }
