@@ -9,6 +9,7 @@ package com.stalary.algorithm.leetcode;
 /**
  * BinaryTreePreorderTraversal144
  *
+ * 前序遍历二叉树
  * @author lirongqian
  * @since 31/12/2017
  */
@@ -17,13 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-/**
- * BinaryTreePreorderTraversal144
- *
- * 前序遍历二叉树
- * @author lirongqian
- * @since 31/12/2017
- */
+
 public class BinaryTreePreorderTraversal144 {
 
     public static void main(String[] args) {
