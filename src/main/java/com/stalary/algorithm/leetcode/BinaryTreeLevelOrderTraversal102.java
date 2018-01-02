@@ -1,7 +1,7 @@
 /**
- * @(#)BinaryTreeLevelOrderTraversalII107.java, 2017-12-16.
+ * @(#)BinaryTreeLevelOrderTraversal102.java, 2018-01-02.
  * <p>
- * Copyright 2017 Youdao, Inc. All rights reserved.
+ * Copyright 2018 Youdao, Inc. All rights reserved.
  * YOUDAO PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 package com.stalary.algorithm.leetcode;
@@ -12,39 +12,39 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * BinaryTreeLevelOrderTraversalII107
+ * BinaryTreeLevelOrderTraversal102
  *
- * 二叉树的层序遍历，由底部开始打印
+ * 二叉树的层序遍历，由根开始打印
  * @author lirongqian
- * @since 2017/12/16
+ * @since 02/01/2018
  */
-public class BinaryTreeLevelOrderTraversalII107 {
+public class BinaryTreeLevelOrderTraversal102 {
 
     public static void main(String[] args) {
 
     }
 
-    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+    public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
         if (root == null) {
             return result;
         }
-        Queue<TreeNode> q = new LinkedList<>();
-        q.add(root);
-        while (q.size() > 0) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (queue.size() > 0) {
             List<Integer> list = new ArrayList<>();
-            int size = q.size();
+            int size = queue.size();
             for (int i = 0; i < size; i++) {
-                TreeNode node = q.poll();
+                TreeNode node = queue.poll();
                 list.add(node.val);
                 if (node.left != null) {
-                    q.add(node.left);
+                    queue.add(node.left);
                 }
                 if (node.right != null) {
-                    q.add(node.right);
+                    queue.add(node.right);
                 }
             }
-            result.add(0, list);
+            result.add(list);
         }
         return result;
     }
