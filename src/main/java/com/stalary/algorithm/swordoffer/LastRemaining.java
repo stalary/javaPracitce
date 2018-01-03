@@ -35,7 +35,6 @@ public class LastRemaining {
         for (int i = 2; i <= n; ++i) {
             last = (last + m) % i;
         }
-        // 因为实际编号为(1~n)
-        return (last);
+        return last;
     }
 }
