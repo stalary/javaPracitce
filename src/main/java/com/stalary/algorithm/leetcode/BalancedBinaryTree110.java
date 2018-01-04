@@ -1,22 +1,22 @@
 /**
- * @(#)IsBalanced.java, 2017-12-27.
+ * @(#)BalancedBinaryTree110.java, 2018-01-04.
  * <p>
- * Copyright 2017 Youdao, Inc. All rights reserved.
+ * Copyright 2018 Youdao, Inc. All rights reserved.
  * YOUDAO PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
-package com.stalary.algorithm.swordoffer;
+package com.stalary.algorithm.leetcode;
 
 /**
- * IsBalanced
+ * BalancedBinaryTree110
  *
  * 判断一颗二叉树是不是平衡二叉树
  * @author lirongqian
- * @since 27/12/2017
+ * @since 2018/01/04
  */
-public class IsBalanced {
+public class BalancedBinaryTree110 {
 
     boolean flag = true;
-    public boolean IsBalanced_Solution(TreeNode root) {
+    public boolean isBalanced(TreeNode root) {
         if (root == null) {
             return true;
         }
