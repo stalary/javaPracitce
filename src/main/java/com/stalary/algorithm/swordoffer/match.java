@@ -17,7 +17,7 @@ package com.stalary.algorithm.swordoffer;
 public class match {
 
     public boolean match(char[] str, char[] pattern) {
-       sif (str == null || pattern == null) {
+       if (str == null || pattern == null) {
             return false;
         }
         return matchCore(str, 0, pattern, 0);

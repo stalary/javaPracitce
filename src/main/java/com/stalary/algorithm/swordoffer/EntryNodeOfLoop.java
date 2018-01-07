@@ -6,11 +6,10 @@
  */
 package com.stalary.algorithm.swordoffer;
 
-import com.stalary.algorithm.algorithmbook.List;
-
 /**
  * EntryNodeOfLoop
  *
+ * 一个链表中包含环，找出该链表的环的入口 w
  * @author lirongqian
  * @since 2017/12/9
  */
