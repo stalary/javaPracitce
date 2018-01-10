@@ -1,8 +1,8 @@
 package com.stalary.collection;
 
-import com.sun.org.apache.xml.internal.security.algorithms.JCEMapper;
-
-import java.util.*;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @Author:Stalary
@@ -10,8 +10,24 @@ import java.util.*;
  * @Date Created in 2017/9/7
  */
 public class CollectionTest {
+
     public static void main(String[] args) {
-        //测试hashSet去重
+
+
+        Map<String, Integer> map = new HashMap<>();
+        map.put("a", 1);
+        map.put(null, 3);
+        map.put("b", 2);
+        map.clear();
+        System.out.println(map);
+        /*LinkedHashMap<String, Integer> collect = map.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+        map.replaceAll((k, v) -> v+1);
+        map.forEach((k, v) -> System.out.print("key:" + k + " " + "value" + v));
+        System.out.println(collect);*/
+       /* //测试hashSet去重
         Set<User> set = new HashSet<>();
         set.add(new User(1,"zyw",19));
         set.add(new User(2,"stalary",20));
@@ -101,7 +117,7 @@ public class CollectionTest {
         bitSet.set(1);
         bitSet.set(3);
         System.out.println(bitSet.get(1));
-        System.out.println(bitSet.get(2));
+        System.out.println(bitSet.get(2));*/
     }
 
     //匿名Comparator实现
