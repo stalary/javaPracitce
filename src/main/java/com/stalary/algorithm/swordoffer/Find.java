@@ -19,6 +19,13 @@ public class Find {
 
     }
 
+    /**
+     * 可知左上角为最小值，右下角为最大值，我们可以选择左下角或者右上角进行查找
+     * 选择右上角进行查找，如果目标值小于当前值，则列数-1，大于当前值，则行数+1，等于时即为找到该值
+     * @param target
+     * @param array
+     * @return
+     */
     public static boolean Find(int target, int [][] array) {
         if (array.length == 0) {
             return false;

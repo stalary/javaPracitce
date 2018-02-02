@@ -7,14 +7,12 @@
 package com.stalary.web.socket;
 
 import lombok.Cleanup;
-import lombok.Data;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.*;
-import java.util.Arrays;
+import java.net.ServerSocket;
+import java.net.Socket;
 
 /**
  * InetAddress
@@ -25,7 +23,8 @@ import java.util.Arrays;
 public class Server {
 
     public static void main(String[] args) throws Exception {
-            // 1、创建一个服务器Socket，即ServerSocket，指定绑定的端口，并监听此端口
+        // 1、创建一个服务器Socket，即ServerSocket，指定绑定的端口，并监听此端口
+        while (true) {
             @Cleanup ServerSocket serverSocket = new ServerSocket(8888);
             // 2、调用()方法开始监听，等待客户端的连接
             System.out.println("***服务器即将启动，等待客户端的连接***");
@@ -41,7 +40,7 @@ public class Server {
                 System.out.println("我是服务器，读取客户端发过来的信息：" + info);
             }
             socket.shutdownInput();//关闭输入流
-
+        }
     }
 
 }

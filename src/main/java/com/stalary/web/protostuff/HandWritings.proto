@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+option java_package = "com.stalary.web.protostuff";
+option java_outer_classname = "HandWritingsProtos";
+
+message HandWritingsPB {
+
+    message PointPB {
+	    int32 x = 1;
+		int32 y = 2;
+		float p = 3;
+		float w = 4;
+		float s = 5;
+	}
+    message HandWritingPB {
+	    repeated PointPB point = 1;
+		int32 left = 2;
+		int32 top = 3;
+		int32 right = 4;
+		int32 bottom = 5;
+	}
+	
+	repeated HandWritingPB writing = 1; 
+}
+
+message HandWritingsPB2 {
+
+    message PointPB2 {
+	    repeated int32 x = 1;
+	}
+    
+    message HandWritingPB2 {
+	    repeated PointPB2 point = 1;
+	}
+	
+	repeated HandWritingPB2 writing = 1; 
+}
+
+message HandWritingsPBCompact {
+
+    message HandWritingPBCompact {
+	    repeated int32 x = 1;
+	}
+    
+	repeated HandWritingPBCompact writing = 1;
+}

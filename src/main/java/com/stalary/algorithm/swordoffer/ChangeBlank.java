@@ -15,6 +15,11 @@ package com.stalary.algorithm.swordoffer;
  */
 public class ChangeBlank {
 
+    /**
+     * 首先通过一次查找计算出空格的数量，然后求出替换后的长度，然后将字符串的长度扩大为替换后的长度
+     * 从末尾开始进行替换。
+     * @param args
+     */
     public static void main(String[] args) {
         StringBuffer str = new StringBuffer("hello world");
         //spacenum为计算空格数

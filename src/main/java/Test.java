@@ -1,4 +1,4 @@
-import java.util.Stack;
+import java.io.IOException;
 
 /**
  * @Author: Stalary
@@ -7,24 +7,20 @@ import java.util.Stack;
  */
 public class Test {
 
-    Stack<Integer> stack1 = new Stack<Integer>();
-    Stack<Integer> stack2 = new Stack<Integer>();
-
-    public void push(int node) {
-        stack1.push(node);
+    public static void main(String[] args) throws IOException {
+        Test t = new Test();
+        System.out.println(Integer.valueOf("2"));
     }
 
-    public int pop() {
-        if (stack2.isEmpty()) {
-            while (!stack1.isEmpty()) {
-                stack2.push(stack1.pop());
-            }
+
+    public void test() {
+        try {
+            System.out.println(this.getClass().getClassLoader().getResources(""));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return stack2.pop();
-    }
-
-    public static void main(String[] args) {
-
     }
 }
+
+
 

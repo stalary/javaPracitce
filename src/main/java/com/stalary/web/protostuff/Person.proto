@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "com.stalary.web.protostuff";
+option java_outer_classname = "PersonProtos";
+
+message Person {
+
+    string name = 1;
+    string sex = 2;
+    int32 age = 3;
+    double score = 4;
+}
+

@@ -61,6 +61,7 @@ public class maxInWindows {
      */
     public ArrayList<Integer> maxInWindows1(int[] num, int size) {
         ArrayList<Integer> res = new ArrayList<>();
+        // 注意判空
         if (size == 0) {
             return res;
         }
@@ -78,6 +79,7 @@ public class maxInWindows {
                 q.pollLast();
             }
             q.add(i);
+            // 当第一个窗口已全部填入值时，开始存入最大值
             if (begin >= 0) {
                 res.add(num[q.peekFirst()]);
             }

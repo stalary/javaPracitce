@@ -18,19 +18,22 @@ package com.stalary.algorithm.swordoffer;
 public class MovingCount {
 
 
+    public static void main(String[] args) {
+        MovingCount m = new MovingCount();
+        System.out.println(m.numSum(10, 0));
+//        System.out.println(m.movingCount(15, 20, 20));
+    }
+
     public int movingCount(int threshold, int rows, int cols) {
-        //记录是否已经走过
-        boolean[][]  flag= new boolean[rows][cols];
+        boolean[][] flag = new boolean[rows][cols];
         return helper(0, 0, rows, cols, flag, threshold);
     }
 
     private int helper(int i, int j, int rows, int cols, boolean[][] flag, int threshold) {
-        // 判断边界，判断每一位和是否大于限定值，判断是否已经走过
-        if (i < 0 || i >= rows || j < 0 || j >= cols || numSum(i) + numSum(j) > threshold || flag[i][j]) {
+        if (i < 0 || i >= rows || j < 0 || j >= cols || numSum(i,0) + numSum(j,0) + numSum(i) + numSum(j) > threshold || flag[i][j]) {
             return 0;
         }
         flag[i][j] = true;
-        // 四个方向移动
         return helper(i - 1, j, rows, cols, flag, threshold)
                 + helper(i + 1, j, rows, cols, flag, threshold)
                 + helper(i, j - 1, rows, cols, flag, threshold)
@@ -40,11 +43,25 @@ public class MovingCount {
 
     private int numSum(int i) {
         int sum = 0;
-        while (i > 10) {
+        // 记住这里是大于0
+        while (i > 0) {
             sum += i % 10;
             i = i / 10;
         }
         sum += i;
+        System.out.print(sum + " ");
         return sum;
+    }
+
+    private int numSum(int i, int j) {
+        int sum = 0;
+        // 记住这里是大于0
+        while (i >= 10) {
+            sum += i % 10;
+            i = i / 10;
+        }
+        sum += i;
+        System.out.println("error： " + sum + " ");
+        return 0;
     }
 }

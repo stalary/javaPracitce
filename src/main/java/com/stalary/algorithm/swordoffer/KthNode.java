@@ -29,14 +29,17 @@ public class KthNode {
     int index = 0;
     public TreeNode KthNode(TreeNode pRoot, int k) {
         if (pRoot != null) {
+            // 找到二叉树最左的结点，即第一个结点
             TreeNode node = KthNode(pRoot.left, k);
             if (node != null) {
                 return node;
             }
+            // 下标++，继续查找
             index++;
             if (index == k) {
                 return pRoot;
             }
+            // 查找右儿子
             node = KthNode(pRoot.right, k);
             if (node != null) {
                 return node;
