@@ -20,12 +20,7 @@ import java.util.concurrent.FutureTask;
 public class CallableAndFuture {
 
     public static void main(String[] args) {
-        Callable<Integer> callable = new Callable<Integer>() {
-            @Override
-            public Integer call() throws Exception {
-                return new Random().nextInt(100);
-            }
-        };
+        Callable<Integer> callable = () -> new Random().nextInt(100);
         FutureTask<Integer> future = new FutureTask<>(callable);
         new Thread(future).start();
         try {

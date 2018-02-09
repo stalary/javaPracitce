@@ -5,7 +5,6 @@
  * YOUDAO PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 package com.stalary.algorithm.swordoffer;
-
 /**
  * Jump
  *

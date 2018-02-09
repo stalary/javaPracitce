@@ -7,19 +7,11 @@ import java.io.IOException;
  */
 public class Test {
 
+
     public static void main(String[] args) throws IOException {
-        Test t = new Test();
-        System.out.println(Integer.valueOf("2"));
+        System.out.println(Runtime.getRuntime().availableProcessors());
     }
 
-
-    public void test() {
-        try {
-            System.out.println(this.getClass().getClassLoader().getResources(""));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }
 
 

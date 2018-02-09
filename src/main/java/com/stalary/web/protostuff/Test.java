@@ -31,10 +31,10 @@ public class Test {
         Person.Children children = new Person.Children("hawk", "man", 21);
         Person stalary = new Person("stalary", "man", 22, 84.5);
 
-//        protoStuff(stalary);
-//        fastJson(stalary);
-//        protoBuf();
-        hand();
+        protoStuff(stalary);
+        fastJson(stalary);
+        protoBuf();
+//        hand();
     }
 
     private static void protoStuff(Person person) {

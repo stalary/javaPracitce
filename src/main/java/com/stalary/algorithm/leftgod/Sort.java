@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * @author Stalary
- * @description: 2
+ * @description: 各种基本排序的实现
  * @date Created in 2017/9/19
  */
 public class Sort {
@@ -56,8 +56,10 @@ public class Sort {
             return a;
         }
         for (int i = 0; i < n; i++) {
-            for (int j = i; j > 0 && a[j] < a[j - 1]; j--) {
-                swap(a, j, j - 1);
+            for (int j = i; j > 0; j--) {
+                if (a[j] < a[j - 1]) {
+                    swap(a, j, j - 1);
+                }
             }
         }
         return a;
@@ -74,8 +76,10 @@ public class Sort {
         int feet = n / 2;
         while (feet >= 1) {
             for (int i = feet; i < n; i++) {
-                for (int j = i; j > 0 && a[j] < a[j - 1]; j -= feet) {
-                    swap(a, j, j - 1);
+                for (int j = i; j > 0; j -= feet) {
+                    if (a[j] < a[j - 1]) {
+                        swap(a, j, j - 1);
+                    }
                 }
             }
             // 每次步长减半
@@ -103,7 +107,7 @@ public class Sort {
         if (left >= right) {
             return;
         }
-        //计算中间值
+        //计算中间值，每次都取一半进行划分
         int mid = (left + right) / 2;
         //划分左右
         mSort(a, left, mid);
@@ -154,35 +158,38 @@ public class Sort {
     /**
      * quickSort，递归使用，进行模块分化
      */
-    private static int[] quickSort(int[] a, int n) {
-        quickSort(a, 0, n - 1);
-        return a;
+    public static int[] quickSort(int[] A, int n) {
+        quickSort(A, 0, n - 1);
+        return A;
     }
 
-    private static void quickSort(int[] a, int left, int right) {
+    private static void quickSort(int A[], int left, int right) {
         if (left >= right) {
             return;
         }
-        // 取最左边的值作为界限，所以要从右边开始排序
-        int key = a[left];
+        //取最左边的值作为界限，所以要从右边开始排序
+        int key = A[left];
         int l = left;
         int r = right;
         while (l < r) {
-            // 直到找到小于界限值的数
-            while (l < r && a[r] >= key) {
+            //直到找到小于界限值的数
+            while (l < r && A[r] >= key) {
                 r--;
             }
-            // 直到找到大于界限值的数
-            while (l < r && a[l] <= key) {
+            //直到找到大于界限值的数
+            while (l < r && A[l] <= key) {
                 l++;
             }
-            swap(a, l, r);
+            int temp = A[r];
+            A[r] = A[l];
+            A[l] = temp;
         }
         //左右两侧查找相遇，基数归位
-        swap(a, left, r);
+        A[left] = A[l];
+        A[l] = key;
         //从左右两侧继续查找
-        quickSort(a, left, l - 1);
-        quickSort(a, l + 1, right);
+        quickSort(A, left, l);
+        quickSort(A, l + 1, right);
     }
 
     //////////////////////////////////////////////////////////////////////////////////////
@@ -198,7 +205,7 @@ public class Sort {
         //排序
         for (int i = n - 1; i > 0; i--) {
             swap(a, i, 0);
-            // 将堆的前ℹ️i - 1项进行调整，因为第i的元素已经是最大的，无需调整
+            // 将堆的前️i - 1项进行调整，因为第i的元素已经是最大的，无需调整
             heapAdjust(a, 0, i - 1);
         }
 
@@ -207,7 +214,7 @@ public class Sort {
 
     private static void heapAdjust(int[] a, int i, int m) {
         // 2 * i + 1即为子结点，+1是与建堆的-1相对应的
-        while(2 * i + 1 <= m ) {
+        while (2 * i + 1 <= m) {
             int k = 2 * i + 1;
             if (k < m && a[k] < a[k + 1]) {//找出最大的结点
                 k++;
@@ -296,7 +303,7 @@ public class Sort {
 
 
     public static void main(String[] args) {
-        int[] a = new int[]{4, 3, 5, 2, 7, 230, 23, 1, 54, 23};
+        int[] a = new int[]{4, 3, 5, 3, 2, 7, 230, 23, 1, 54, 23};
         int length = a.length;
         System.out.println("please you want to use sort type，input e exit");
         Scanner in = new Scanner(System.in);
