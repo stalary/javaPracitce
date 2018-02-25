@@ -19,6 +19,7 @@ public class Sort {
         if (a == null || n < 2) {
             return a;
         }
+        // 首先比较整体数组，最大数放到数组的最后，每次循环缩小1
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
                 if (a[j] > a[j + 1]) {
@@ -34,13 +35,16 @@ public class Sort {
      */
     private static int[] selectSort(int[] a, int n) {
         for (int i = 0; i < n - 1; i++) {
+            // 当前下标作为最小值
             int min = i;
             // 先选出最小值，放到位置零上，然后以此类推，依次进行交换
             for (int j = i + 1; j < n; j++) {
                 if (a[min] > a[j]) {
+                    // 当下标对应的值大于当前值时，交换下标值
                     min = j;
                 }
             }
+            // 当前下标和初始下标不相同时，进行交换
             if (min != i) {
                 swap(a, min, i);
             }
@@ -68,7 +72,7 @@ public class Sort {
     /**
      * shell排序，步长每次缩小一半，是插入排序的变形
      */
-    public static int[] shellSort(int[] a, int n) {
+    private static int[] shellSort(int[] a, int n) {
         if (a == null || n < 2) {
             return a;
         }
@@ -77,8 +81,11 @@ public class Sort {
         while (feet >= 1) {
             for (int i = feet; i < n; i++) {
                 for (int j = i; j > 0; j -= feet) {
-                    if (a[j] < a[j - 1]) {
-                        swap(a, j, j - 1);
+                    if (j < feet) {
+                        break;
+                    }
+                    if (a[j] < a[j - feet]) {
+                        swap(a, j, j - feet);
                     }
                 }
             }
@@ -116,6 +123,17 @@ public class Sort {
         merge(a, left, mid, right);
     }
 
+    /**
+     * 9 8 7 6 4 5 1 6 -> 8 9|6 7|4 5|1 6 -> 8 9 6 7|4 5 1 6
+     * 左边的mid为1，所以temp为6 7然后将左边数组全部放入，实现排序
+     * 右边mid为5，所以temp为1 4 5，然后将6放入，实现排序
+     * 6 7 8 |9| 1 4 5 6
+     * mid为3，即9，所以temp为1 4 5 6然后将左边数组全部放入，完成排序
+     * @param a
+     * @param left
+     * @param mid
+     * @param right
+     */
     private static void merge(int[] a, int left, int mid, int right) {//合并左右两个数组
 
         // 临时数组

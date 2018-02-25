@@ -17,7 +17,7 @@ public class VerifySquenceOfBST {
 
     public static void main(String[] args) {
         System.out.println(new VerifySquenceOfBST().VerifySquenceOfBST(new int[] {
-                4,8,6,12,16,14,10
+                7,4,6,5
         }));
     }
 

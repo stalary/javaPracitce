@@ -15,6 +15,7 @@ public class BusinessProcessorHandler implements InvocationHandler {
         this.target = target;
     }
 
+    @Override
     public Object invoke(Object proxy, Method method, Object[] args)
             throws Throwable {
         System.out.println("You can do something here before process your business");

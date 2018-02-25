@@ -23,8 +23,9 @@ public class Permutation {
 
     }
 
-    public ArrayList Permutation(String str) {
-        ArrayList res = new ArrayList();
+    @SuppressWarnings("unchecked")
+    public ArrayList<String> Permutation(String str) {
+        ArrayList<String> res = new ArrayList<>();
         if (str != null && str.length() > 0) {
             PermutationHelper(str.toCharArray(), 0, res);
             Collections.sort(res);
@@ -32,7 +33,8 @@ public class Permutation {
         return res;
     }
 
-    public void PermutationHelper(char[] cs, int i, ArrayList list) {
+    @SuppressWarnings("unchecked")
+    public void PermutationHelper(char[] cs, int i, ArrayList<String> list) {
         if (i == cs.length - 1) {
             String val = String.valueOf(cs);
             if (!list.contains(val)) {
