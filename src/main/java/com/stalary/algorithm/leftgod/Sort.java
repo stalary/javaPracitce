@@ -80,10 +80,7 @@ public class Sort {
         int feet = n / 2;
         while (feet >= 1) {
             for (int i = feet; i < n; i++) {
-                for (int j = i; j > 0; j -= feet) {
-                    if (j < feet) {
-                        break;
-                    }
+                for (int j = i; j >= feet; j -= feet) {
                     if (a[j] < a[j - feet]) {
                         swap(a, j, j - feet);
                     }
