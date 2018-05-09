@@ -17,7 +17,7 @@ public class BitCharacters717 {
 
     public static void main(String[] args) {
         int[] bits = new int[]{
-                1, 0, 0
+                1, 1, 1
         };
         System.out.println(isOneBitCharacter(bits));
     }

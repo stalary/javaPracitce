@@ -1,9 +1,4 @@
-/**
- * @(#)FindAllNumbersDisappearedInAnArray448.java, 2017-11-25.
- * <p>
- * Copyright 2017 Youdao, Inc. All rights reserved.
- * YOUDAO PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
- */
+
 package com.stalary.algorithm.leetcode;
 
 import java.util.ArrayList;
@@ -12,7 +7,7 @@ import java.util.List;
 /**
  * FindAllNumbersDisappearedInAnArray448
  *
- * 在0-n中找到数组中不存在的元素，我们可以顺序查找，将每次找到的元素对应的下标设为负数
+ * 在1-n中找到数组中不存在的元素，我们可以顺序查找，将每次找到的元素对应的下标设为负数
  * 当第二次遍历时，将正数存入list中返回
  * @author lirongqian
  * @since 2017/11/25

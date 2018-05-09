@@ -1,15 +1,25 @@
-/**
- * @(#)InvertBinaryTree226.java, 2017-11-23.
- * <p>
- * Copyright 2017 Youdao, Inc. All rights reserved.
- * YOUDAO PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
- */
+
 package com.stalary.algorithm.leetcode;
 
 /**
  * InvertBinaryTree226
  *
- * 交换两颗二叉树的
+ * 交换两颗二叉树
+ *
+ * Invert a binary tree.
+
+        4
+      /   \
+     2     7
+    / \   / \
+   1   3 6   9
+ to
+
+        4
+      /   \
+     7     2
+    / \   / \
+   9   6 3   1
  * @author lirongqian
  * @since 2017/11/23
  */
@@ -23,8 +33,8 @@ public class InvertBinaryTree226 {
         if (root == null) {
             return null;
         }
-        TreeNode node;
-        node = root.left;
+        // 递归的交换左右的结点
+        TreeNode node = root.left;
         root.left = invertTree(root.right);
         root.right = invertTree(node);
         return root;

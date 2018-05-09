@@ -24,6 +24,11 @@ public class ArrayPartitionI561 {
         System.out.println(arrayPairSum(nums));
     }
 
+    /**
+     * 1，4，3，2-》min(1，2) + min(3，4) = 4
+     * @param nums
+     * @return
+     */
     public static int arrayPairSum(int[] nums) {
         Arrays.sort(nums);
         int sum = 0;

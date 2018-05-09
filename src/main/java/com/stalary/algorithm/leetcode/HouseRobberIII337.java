@@ -1,9 +1,4 @@
-/**
- * @(#)HouseRobberIII337.java, 2017-12-31.
- * <p>
- * Copyright 2017 Youdao, Inc. All rights reserved.
- * YOUDAO PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
- */
+
 package com.stalary.algorithm.leetcode;
 
 /**
@@ -30,6 +25,7 @@ public class HouseRobberIII337 {
         if (root.left != null) {
             val += rob(root.left.left) + rob(root.left.right);
         }
+        // 求出左右儿子或者左右儿子下一层的最大值
         return Math.max(val + root.val, rob(root.left) + rob(root.right));
     }
 }

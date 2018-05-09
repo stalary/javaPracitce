@@ -1,9 +1,4 @@
-/**
- * @(#)HouseRobber198.java, 2017-12-22.
- * <p>
- * Copyright 2017 Youdao, Inc. All rights reserved.
- * YOUDAO PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
- */
+
 package com.stalary.algorithm.leetcode;
 
 /**
@@ -61,6 +56,7 @@ public class HouseRobber198 {
         // b是当前的最大受益
         int b = Math.max(nums[0], nums[1]);
         for (int i = 2; i < nums.length; i++) {
+            // tmp为上一次的最大收益
             int tmp = b;
             // 当前的最大收益是两种选择里较大的那个
             b = Math.max(a + nums[i], b);

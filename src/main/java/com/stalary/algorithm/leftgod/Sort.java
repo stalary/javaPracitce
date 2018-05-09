@@ -126,6 +126,7 @@ public class Sort {
      * 右边mid为5，所以temp为1 4 5，然后将6放入，实现排序
      * 6 7 8 |9| 1 4 5 6
      * mid为3，即9，所以temp为1 4 5 6然后将左边数组全部放入，完成排序
+     * 需要大小为n的辅助数组，所以空间复杂度为n
      * @param a
      * @param left
      * @param mid
@@ -171,7 +172,7 @@ public class Sort {
     //////////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * quickSort，递归使用，进行模块分化
+     * quickSort，递归使用，进行模块分化，因为使用了递归，所以需要logn的空间
      */
     public static int[] quickSort(int[] A, int n) {
         quickSort(A, 0, n - 1);
@@ -199,7 +200,7 @@ public class Sort {
             A[r] = A[l];
             A[l] = temp;
         }
-        //左右两侧查找相遇，基数归位
+        //左右两侧查找相遇，基数归位，A[l]为相遇点
         A[left] = A[l];
         A[l] = key;
         //从左右两侧继续查找

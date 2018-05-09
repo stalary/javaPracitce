@@ -18,5 +18,6 @@ public class Test {
         Caller caller = new Caller();
         caller.setCallInterface(() -> System.out.println("this is the client printName method"));
         caller.call();
+
     }
 }

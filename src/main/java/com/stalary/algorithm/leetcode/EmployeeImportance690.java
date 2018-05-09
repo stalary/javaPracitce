@@ -1,9 +1,4 @@
-/**
- * @(#)EmployeeImportance690.java, 2017-11-23.
- * <p>
- * Copyright 2017 Youdao, Inc. All rights reserved.
- * YOUDAO PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
- */
+
 package com.stalary.algorithm.leetcode;
 
 import java.util.ArrayList;
@@ -50,7 +45,7 @@ public class EmployeeImportance690 {
             }
         }
         for (int i = 0; i < manager.subordinates.size(); i++) {
-            getImportance(employees, manager.subordinates.get(i));
+            getImportance1(employees, manager.subordinates.get(i));
         }
         return total;
     }

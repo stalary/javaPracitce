@@ -1,9 +1,4 @@
-/**
- * @(#)FloodFill733.java, 2017-11-27.
- * <p>
- * Copyright 2017 Youdao, Inc. All rights reserved.
- * YOUDAO PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
- */
+
 package com.stalary.algorithm.leetcode;
 
 /**

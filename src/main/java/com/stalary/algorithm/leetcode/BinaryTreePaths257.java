@@ -58,11 +58,11 @@ public class BinaryTreePaths257 {
             return paths;
         }
 
-        for (String path : binaryTreePaths(root.left)) {
+        for (String path : binaryTreePaths1(root.left)) {
             paths.add(root.val + "->" + path);
         }
 
-        for (String path : binaryTreePaths(root.right)) {
+        for (String path : binaryTreePaths1(root.right)) {
             paths.add(root.val + "->" + path);
         }
         return paths;
