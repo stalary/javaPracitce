@@ -13,6 +13,7 @@ import java.net.Socket;
  * @since 2018/05/08
  */
 public class RpcImporter<S> {
+    @SuppressWarnings("unchecked")
     public S importer(final Class<?> serviceClass, final InetSocketAddress addr) {
         return (S) Proxy.newProxyInstance(serviceClass.getClassLoader(), new Class<?>[]{serviceClass.getInterfaces()[0]},
                 (proxy, method, args) -> {

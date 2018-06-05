@@ -214,12 +214,13 @@ public class Sort {
      * heapSort，循环调用，进行模块划分
      */
     private static int[] heapSort(int[] a, int n) {
-        //建大根堆,每次取子结点的根结点，依次进行比较
+        // 建大根堆,每次取子结点的根结点，依次进行比较
         for (int i = n / 2 - 1; i >= 0; i--) {
             heapAdjust(a, i, n - 1);
         }
-        //排序
+        // 排序
         for (int i = n - 1; i > 0; i--) {
+            // 将最大值放到最后
             swap(a, i, 0);
             // 将堆的前️i - 1项进行调整，因为第i的元素已经是最大的，无需调整
             heapAdjust(a, 0, i - 1);
@@ -232,10 +233,12 @@ public class Sort {
         // 2 * i + 1即为子结点，+1是与建堆的-1相对应的
         while (2 * i + 1 <= m) {
             int k = 2 * i + 1;
-            if (k < m && a[k] < a[k + 1]) {//找出最大的结点
+            // 找出最大的子结点
+            if (k < m && a[k] < a[k + 1]) {
                 k++;
             }
-            if (a[k] > a[i]) {//将子结点与根结点进行比较，若子结点较大，则进行交换
+            // 将子结点与根结点进行比较，若子结点较大，则进行交换
+            if (a[k] > a[i]) {
                 swap(a, k, i);
                 i = k;
             } else {
@@ -319,7 +322,7 @@ public class Sort {
 
 
     public static void main(String[] args) {
-        int[] a = new int[]{4, 3, 5, 3, 2, 7, 230, 23, 1, 54, 23};
+        int[] a = new int[]{4, 3, 5, 2, 7};
         int length = a.length;
         System.out.println("please you want to use sort type，input e exit");
         Scanner in = new Scanner(System.in);
