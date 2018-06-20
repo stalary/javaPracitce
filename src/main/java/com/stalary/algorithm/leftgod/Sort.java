@@ -59,12 +59,28 @@ public class Sort {
         if (a == null || n < 2) {
             return a;
         }
-        for (int i = 0; i < n; i++) {
-            for (int j = i; j > 0; j--) {
-                if (a[j] < a[j - 1]) {
-                    swap(a, j, j - 1);
-                }
+        for (int i = 1; i < n; i++) {
+            // 当小于前一个值时，就向前交换
+            for (int j = i; j > 0 && a[j] < a[j - 1]; j--) {
+                swap(a, j, j - 1);
             }
+        }
+        return a;
+    }
+
+    private static int[] insertSort1(int[] a, int n) {
+        if (a == null || n < 2) {
+            return a;
+        }
+        int target;
+        for (int i = 1; i < n; i++) {
+            int j = i;
+            target = a[i];
+            while (j > 0 && target < a[j - 1]) {
+                a[j] = a[j - 1];
+                j--;
+            }
+            a[j] = target;
         }
         return a;
     }
@@ -80,10 +96,8 @@ public class Sort {
         int feet = n / 2;
         while (feet >= 1) {
             for (int i = feet; i < n; i++) {
-                for (int j = i; j >= feet; j -= feet) {
-                    if (a[j] < a[j - feet]) {
-                        swap(a, j, j - feet);
-                    }
+                for (int j = i; j >= feet && a[j] < a[j - feet]; j -= feet) {
+                    swap(a, j, j - feet);
                 }
             }
             // 每次步长减半
@@ -127,6 +141,7 @@ public class Sort {
      * 6 7 8 |9| 1 4 5 6
      * mid为3，即9，所以temp为1 4 5 6然后将左边数组全部放入，完成排序
      * 需要大小为n的辅助数组，所以空间复杂度为n
+     *
      * @param a
      * @param left
      * @param mid
