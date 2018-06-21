@@ -7,7 +7,7 @@ package com.stalary.algorithm.wuxiuguo;
 
 /**
  * Second
- *
+ * 第二大元素
  * @author lirongqian
  * @since 2018/06/19
  */
