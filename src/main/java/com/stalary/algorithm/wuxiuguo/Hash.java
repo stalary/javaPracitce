@@ -25,9 +25,11 @@ public class Hash {
         for (String str : strings) {
             int temp = strMod(str);
             if (result.containsKey(temp)) {
+                // 当存在时，使用开散列的方法解决冲突
                 Set<String> stringSet = result.get(temp);
                 stringSet.add(str);
             } else {
+                // 不存在时，存储当前元素
                 Set<String> set = new HashSet<>();
                 set.add(str);
                 result.put(temp, set);
@@ -37,6 +39,7 @@ public class Hash {
     }
 
     public static int strMod(String str) {
+        // 将字符串转化为数字
         char[] chars = str.toCharArray();
         int sum = 0;
         for (char c : chars) {
@@ -46,6 +49,7 @@ public class Hash {
     }
 
     public static int mod(int num) {
+        // hash取模
         return num % 7;
     }
 }

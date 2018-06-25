@@ -1,7 +1,9 @@
 package com.stalary.algorithm.wuxiuguo;
 
+import java.util.Arrays;
+
 /**
- * InversePairs
+ * inversePairs
  * <p>
  * 计算逆序对的数量，前面数字大于后面的数字，即代表一个逆序对
  * @author lirongqian
@@ -9,60 +11,54 @@ package com.stalary.algorithm.wuxiuguo;
  */
 public class InversePairs {
 
-    public int InversePairs(int[] array) {
-        if (array == null || array.length == 0) {
-            return 0;
-        }
-        int[] copy = new int[array.length];
-        System.arraycopy(array, 0, copy, 0, array.length);
-        return inversePairsCore(array, copy, 0, array.length - 1);
+    public static void main(String[] args) {
+        int[] array = new int[] {
+                6, 5, 4, 3
+        };
+        System.out.println(new InversePairs().divide(array, 0, array.length - 1));
+        System.out.println(Arrays.toString(array));
     }
 
-    /**
-     * 实际上是归并排序的过程
-     *
-     * @param array
-     * @param copy
-     * @param low
-     * @param high
-     * @return
-     */
-    private int inversePairsCore(int[] array, int[] copy, int low, int high) {
-        if (low == high) {
-            return 0;
+    public int divide(int[] array, int left, int right) {
+        if (left < right) {
+            int mid = (left + right) / 2;
+            divide(array, left, mid);
+            divide(array, mid + 1, right);
+            return merge(array, left, mid, right);
         }
-        int mid = (low + high) >> 1;
-        // 递归拆分数组，分到只有一个数据项
-        int leftCount = inversePairsCore(array, copy, low, mid);
-        int rightCount = inversePairsCore(array, copy, mid + 1, high);
-        int count = 0;
-        // 设置左侧数组范围为i，右侧数组范围为j
-        int i = mid;
-        int j = high;
-        // 当前判断的下标
-        int locCopy = high;
-        while (i >= low && j > mid) {
-            // 当前面的元素较大时，统计一下数量
-            if (array[i] > array[j]) {
-                // 单块的内部已经排好序，所以如果最小的比后面的大的话，会都大
-                count += j - mid;
-                // 满足逆序对时，左侧元素向前移动
-                copy[locCopy--] = array[i--];
+        return 0;
+    }
+
+    private int count = 0;
+
+    public int merge(int[] array, int left, int mid, int right) {
+        int leftIndex = left;
+        int rightIndex = mid + 1;
+        int[] temp = new int[right - left + 1];
+        int tempIndex = 0;
+        while (leftIndex <= mid && rightIndex <= right) {
+            if (array[leftIndex] <= array[rightIndex]) {
+                temp[tempIndex++] = array[leftIndex++];
             } else {
-                // 当不满足逆序对时，右侧元素向前移动
-                copy[locCopy--] = array[j--];
+                System.out.println("left: " + array[leftIndex] + " right: " + array[rightIndex]);
+                temp[tempIndex++] = array[rightIndex++];
+                System.out.println("leftIndex: " + leftIndex);
+                System.out.println("count: " + (mid - leftIndex + 1));
+                count += mid - leftIndex + 1;
             }
         }
-        // 左侧元素归位
-        for (; i >= low; i--) {
-            copy[locCopy--] = array[i];
+        while (leftIndex <= mid) {
+            temp[tempIndex++] = array[leftIndex++];
         }
-        // 右侧元素归位
-        for (; j > mid; j--) {
-            copy[locCopy--] = array[j];
+        while (rightIndex <= right) {
+            temp[tempIndex++] = array[rightIndex++];
         }
-        // 将元素放回原数组，完成排序
-        System.arraycopy(copy, low, array, low, high + 1 - low);
-        return leftCount + rightCount + count;
+        // 将临时数组放回原数组中实现排序
+        int t = 0;
+        while ((t + left) <= right) {
+            array[t + left] = temp[t];
+            t++;
+        }
+        return count;
     }
 }

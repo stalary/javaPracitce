@@ -26,22 +26,22 @@ public class MergeStone {
         return sum;
     }
 
-    public static int mergeStone(int[] A) {
-        if (A.length == 1) {
+    public static int mergeStone(int[] a) {
+        if (a.length == 1) {
             return 0;
         }
-        int[][] dp = new int[A.length][A.length];
+        int[][] dp = new int[a.length][a.length];
         // 合并石子堆数
-        for (int len = 1; len < A.length; len++) {
-            for (int i = 0; i < A.length - len; i++) {
+        for (int len = 1; len < a.length; len++) {
+            for (int i = 0; i < a.length - len; i++) {
                 int j = i + len;
                 int min = Integer.MAX_VALUE;
                 for (int k = i; k < j; k++) {
-                    min = Math.min(min, dp[i][k] + dp[k + 1][j] + getSum(A, i, j));
+                    min = Math.min(min, dp[i][k] + dp[k + 1][j] + getSum(a, i, j));
                 }
                 dp[i][j] = min;
             }
         }
-        return dp[0][A.length - 1];
+        return dp[0][a.length - 1];
     }
 }
