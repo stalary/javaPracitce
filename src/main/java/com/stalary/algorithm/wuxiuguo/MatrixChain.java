@@ -20,14 +20,12 @@ public class MatrixChain {
     public static void matrixChain(int p[], int m[][], int s[][]) {
         // 矩阵数量
         int n = p.length - 1;
-        //
-        int i, j;
         // 矩阵链的长度
-        for (int r = 2; r <= n; r++) {
+        for (int len = 2; len <= n; len++) {
             // 矩阵链长度为r的矩阵的起始位置，去除掉边界值
-            for (i = 1; i <= n - r + 1; i++) {
-                // 矩阵链长度为r，起始位置为i的最后一个矩阵的位置，去除点掉边界
-                j = i + r - 1;
+            for (int i = 1; i <= n - len + 1; i++) {
+                // 矩阵链长度为r，起始位置为i的最后一个矩阵的位置，去除掉边界
+                int j = i + len - 1;
                 // 计算连乘初始值
                 m[i][j] = m[i][i] + m[i + 1][j] + p[i - 1] * p[i] * p[j];
                 // 括号初始位置

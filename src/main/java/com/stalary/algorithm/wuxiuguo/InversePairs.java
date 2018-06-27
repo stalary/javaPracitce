@@ -40,10 +40,7 @@ public class InversePairs {
             if (array[leftIndex] <= array[rightIndex]) {
                 temp[tempIndex++] = array[leftIndex++];
             } else {
-                System.out.println("left: " + array[leftIndex] + " right: " + array[rightIndex]);
                 temp[tempIndex++] = array[rightIndex++];
-                System.out.println("leftIndex: " + leftIndex);
-                System.out.println("count: " + (mid - leftIndex + 1));
                 count += mid - leftIndex + 1;
             }
         }

@@ -14,7 +14,7 @@ package com.stalary.algorithm.wuxiuguo;
 public class MergeStone {
 
     public static void main(String[] args) {
-        int[] num = new int[]{13, 7, 8, 16, 21, 4, 18};
+        int[] num = new int[]{13, 8, 5};
         System.out.println(mergeStone(num));
     }
 
@@ -27,21 +27,22 @@ public class MergeStone {
     }
 
     public static int mergeStone(int[] a) {
-        if (a.length == 1) {
-            return 0;
-        }
-        int[][] dp = new int[a.length][a.length];
+        int n = a.length;
+        int[][] dp = new int[n + 1][n + 1];
         // 合并石子堆数
-        for (int len = 1; len < a.length; len++) {
-            for (int i = 0; i < a.length - len; i++) {
-                int j = i + len;
+        for (int len = 2; len <= n; len++) {
+            for (int i = 1; i <= n - len + 1; i++) {
+                int j = i + len - 1;
                 int min = Integer.MAX_VALUE;
+                // 传入的a下标从0开始，所以需要减1
+                int sum = getSum(a, i - 1, j - 1);
                 for (int k = i; k < j; k++) {
-                    min = Math.min(min, dp[i][k] + dp[k + 1][j] + getSum(a, i, j));
+                    // 动态规划方程，找到最小值
+                    min = Math.min(min, dp[i][k] + dp[k + 1][j] + sum);
                 }
                 dp[i][j] = min;
             }
         }
-        return dp[0][a.length - 1];
+        return dp[1][n];
     }
 }

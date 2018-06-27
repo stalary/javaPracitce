@@ -19,8 +19,9 @@ public class Second {
         int[] num = new int[]{
                 3, 2, 4, 5, 7, 1, 8
         };
-        findK(num, 0, num.length - 1, 3);
+        findK(num, 0, num.length - 1, 2);
         System.out.println(Arrays.toString(num));
+        System.out.println(num[1]);
     }
 
     public static int findSecondNum(int num[], int start, int end) {
