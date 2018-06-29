@@ -18,7 +18,7 @@ public class ExecuteOrder {
 
 class Parent {
 
-    static String name = "parent ";
+    static String name;
 
     public Parent() {
         System.out.print("1 ");
