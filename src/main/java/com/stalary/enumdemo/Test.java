@@ -11,9 +11,14 @@ package com.stalary.enumdemo;
  * @author lirongqian
  * @since 2018/06/05
  */
-public class Test {
+public enum Test {
+    Instance;
 
-    public static void main(String[] args) {
-        System.out.println(Operation.MINUS.apply(1, 3));
+    Test() {
+
+    }
+
+    public static Test getInstance() {
+        return Instance;
     }
 }

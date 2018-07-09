@@ -13,7 +13,10 @@ package com.stalary.callback;
  * @since 26/12/2017
  */
 public class B  implements A.CallBackA{
+
+
     public static void main(String[] args) {
+
         B b = new B();
         A a = new A();
         a.method(b);
