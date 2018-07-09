@@ -19,7 +19,7 @@ public class RpcTest {
             }
         }).start();
         RpcImporter<EchoService> rpcImporter = new RpcImporter<>();
-        EchoService echo = rpcImporter.importer(EchoServiceImpl1.class, new InetSocketAddress("localhost", 8080));
-        System.out.println(echo.echo("Are you ok"));
+        EchoService echo = rpcImporter.importer(EchoServiceImpl.class, new InetSocketAddress("localhost", 8080));
+        System.out.println(echo.echo("I am stalary"));
     }
 }

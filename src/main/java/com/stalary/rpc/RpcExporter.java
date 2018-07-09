@@ -19,6 +19,13 @@ import java.util.concurrent.Executors;
 public class RpcExporter {
 
     static Executor executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+
+    /**
+     * tcp的socket进行发布
+     * @param hostName
+     * @param port
+     * @throws Exception
+     */
     public static void exporter(String hostName, int port) throws Exception {
         ServerSocket server = new ServerSocket();
         server.bind(new InetSocketAddress(hostName, port));
@@ -32,7 +39,7 @@ public class RpcExporter {
     }
 
     private static class ExporterTask implements Runnable {
-        Socket client = null;
+        Socket client;
         public ExporterTask(Socket client) {
             this.client = client;
         }
