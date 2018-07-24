@@ -25,9 +25,11 @@ public class Nio {
 
         ByteBuffer buf = ByteBuffer.allocate(1024);
 
+        // 写入到buffer
         int bytesRead = inChannel.read(buf);
         while (bytesRead != -1) {
 
+            // 从buffer中读取，从写模式切换到读模式
             System.out.println("Read " + bytesRead);
             buf.flip();
 
@@ -35,24 +37,11 @@ public class Nio {
                 System.out.print((char) buf.get());
             }
 
+            // 清空缓冲区
             buf.clear();
+            // 继续读取
             bytesRead = inChannel.read(buf);
         }
         aFile.close();
-        /*File file = new File("/Users/mac/test.txt");
-        FileInputStream fis = new FileInputStream(file);
-        byte[] buf = new byte[1024];
-        StringBuilder sb = new StringBuilder();
-        int len = 0;
-        while ((len = fis.read(buf)) != - 1) {
-            sb.append(new String(buf, 0, len, "utf-8"));
-        }
-        System.out.println(sb.toString());*/
-        /*File file = new File("/Users/mac/test.txt");
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-        System.out.println(reader.readLine());
-        System.out.println(reader.readLine());
-        System.out.println(reader.readLine());
-        System.out.println(reader.readLine());*/
     }
 }
