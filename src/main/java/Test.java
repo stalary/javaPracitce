@@ -34,6 +34,5 @@ public class Test {
             String title = jsonObject.getString("title");
             System.out.println((i + 1) + " : " + title);
         }
-        System.out.println(s);
     }
 }
