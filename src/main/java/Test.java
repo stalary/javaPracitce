@@ -1,39 +1,27 @@
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Test {
     public static void main(String[] args) {
-
-        ExecutorService executorService = Executors.newWorkStealingPool();
-        Map<Integer, String> map = Maps.newHashMap();
-        LinkedList<Integer> queue = Lists.newLinkedList();
-        for (int i = 0; i < 1000; i++) {
-            queue.add(i);
+        List<Integer> list = new ArrayList<>();
+        for (int i = 1; i <= 10; i++) {
+            list.add(i);
         }
-        executorService.submit(() -> {
-            while (queue.peek() != null) {
-                Integer remove = queue.remove(0);
-                map.put(remove, "test1:" + remove);
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-        executorService.submit(() -> {
-            while (queue.peek() != null) {
-                Integer remove = queue.remove(0);
-                map.put(remove, "test2:" + remove);
-            }
-        });
-        while (map.size() != 1000) {
-            Thread.yield();
+        long start1 = System.currentTimeMillis();
+        list.forEach(Test::work);
+        System.out.println("cost time." + (System.currentTimeMillis() - start1));
+        long start2 = System.currentTimeMillis();
+        list.stream().parallel().forEach(Test::work);
+        System.out.println("parallel cost time." + (System.currentTimeMillis() - start2));
+
+    }
+
+    public static void work(int i)  {
+        try {
+            System.out.println("work: " + i + " do");
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }
