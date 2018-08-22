@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.Scanner;
 
 /**
- * Main3
+ * com.stalary.algorithm.toutiao2019.Main3
  *
  * @author lirongqian
  * @since 2018/08/11

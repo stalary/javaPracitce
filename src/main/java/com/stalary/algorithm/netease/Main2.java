@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
- * Main2
+ * com.stalary.algorithm.toutiao2019.Main2
  *
  * @author lirongqian
  * @since 2018/08/11

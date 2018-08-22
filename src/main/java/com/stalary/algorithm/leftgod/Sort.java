@@ -246,8 +246,8 @@ public class Sort {
 
     private static void heapAdjust(int[] a, int i, int m) {
         // 2 * i + 1即为子结点，+1是与建堆的-1相对应的
-        while (2 * i + 1 <= m) {
-            int k = 2 * i + 1;
+        int k = 2 * i + 1;
+        while (k <= m) {
             // 找出最大的子结点
             if (k < m && a[k] < a[k + 1]) {
                 k++;

@@ -3,12 +3,12 @@
  * <p>
  * Copyright 2018 Stalary.
  */
-package com.stalary.algorithm.toutiao;
+package com.stalary.algorithm.toutiao2018;
 
 import java.util.*;
 
 /**
- * Main1
+ * com.stalary.algorithm.toutiao2019.Main1
  *
  * @author lirongqian
  * @since 2018/08/11

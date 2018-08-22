@@ -1,8 +1,8 @@
 package com.stalary.collection;
 
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
+import com.google.common.collect.Lists;
+
+import java.util.*;
 
 /**
  * @Author:Stalary
@@ -12,8 +12,18 @@ import java.util.Map;
 public class CollectionTest {
 
     public static void main(String[] args) {
-
-
+        // 直接等于会进行关联
+        List<Integer> list = Lists.newArrayList(1, 3, 2, 4, 5);
+        List<Integer> copy = list;
+        // 克隆无关联需要使用new
+        List<Integer> clone = new ArrayList<>(list);
+        copy.remove(Integer.valueOf(3));
+        clone.remove(Integer.valueOf(4));
+        clone.remove(Integer.valueOf(1));
+        clone.remove(Integer.valueOf(3));
+        System.out.println(list);
+        System.out.println(copy);
+        System.out.println(clone);
         Map<String, Integer> map = new HashMap<>();
         map.put("a", 1);
         map.put(null, 3);

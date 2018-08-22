@@ -3,10 +3,10 @@
  * <p>
  * Copyright 2018 Stalary.
  */
-package com.stalary.algorithm.toutiao;
+package com.stalary.algorithm.toutiao2018;
 
 /**
- * Main2
+ * com.stalary.algorithm.toutiao2019.Main2
  *
  * @author lirongqian
  * @since 2018/08/11
