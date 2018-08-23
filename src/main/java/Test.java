@@ -1,9 +1,9 @@
+import java.io.File;
+
 public class Test {
     public static void main(String[] args) {
-        int[] num = new int[] {
-                1, 2, 3, 4, 5, 6, 7, 8, 8
-        };
-        System.out.println(cal(num));
+        File file = new File("/Users/mac/audio/xue4c78a5ad301149ae8ce9f1b9337e7f602531253338897463779.mp3");
+        System.out.println(file.getName().replace("mp3", "webm"));
     }
 
     public static int cal(int[] num) {
