@@ -87,7 +87,7 @@ public class Out {
     /**
      * Initializes an output stream from a file.
      *
-     * @param  filename the name of the file
+     * @param  filename the id of the file
      */
     public Out(String filename) {
         try {

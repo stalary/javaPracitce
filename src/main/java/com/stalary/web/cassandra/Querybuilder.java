@@ -39,7 +39,7 @@ public class Querybuilder {
             student = new Student();
             student.setAddress(row.getString("address"));
             student.setId(row.getInt(id));
-            student.setName(row.getString("name"));
+            student.setName(row.getString("id"));
         }
         return student;
     }

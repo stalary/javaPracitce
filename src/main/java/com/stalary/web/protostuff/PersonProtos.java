@@ -19,11 +19,11 @@ public final class PersonProtos {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string name = 1;</code>
+     * <code>string id = 1;</code>
      */
     java.lang.String getName();
     /**
-     * <code>string name = 1;</code>
+     * <code>string id = 1;</code>
      */
     com.google.protobuf.ByteString
         getNameBytes();
@@ -147,7 +147,7 @@ public final class PersonProtos {
     public static final int NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object name_;
     /**
-     * <code>string name = 1;</code>
+     * <code>string id = 1;</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -162,7 +162,7 @@ public final class PersonProtos {
       }
     }
     /**
-     * <code>string name = 1;</code>
+     * <code>string id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -569,7 +569,7 @@ public final class PersonProtos {
 
       private java.lang.Object name_ = "";
       /**
-       * <code>string name = 1;</code>
+       * <code>string id = 1;</code>
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -584,7 +584,7 @@ public final class PersonProtos {
         }
       }
       /**
-       * <code>string name = 1;</code>
+       * <code>string id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -600,7 +600,7 @@ public final class PersonProtos {
         }
       }
       /**
-       * <code>string name = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setName(
           java.lang.String value) {
@@ -613,7 +613,7 @@ public final class PersonProtos {
         return this;
       }
       /**
-       * <code>string name = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder clearName() {
         
@@ -622,7 +622,7 @@ public final class PersonProtos {
         return this;
       }
       /**
-       * <code>string name = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {

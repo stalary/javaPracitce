@@ -72,7 +72,7 @@ import javax.swing.KeyStroke;
 public final class Picture implements ActionListener {
     private BufferedImage image;               // the rasterized image
     private JFrame frame;                      // on-screen view
-    private String filename;                   // name of file
+    private String filename;                   // id of file
     private boolean isOriginUpperLeft = true;  // location of origin
     private final int width, height;           // width and height
 
@@ -115,7 +115,7 @@ public final class Picture implements ActionListener {
     /**
      * Initializes a picture by reading from a file or URL.
      *
-     * @param  filename the name of the file (.png, .gif, or .jpg) or URL.
+     * @param  filename the id of the file (.png, .gif, or .jpg) or URL.
      * @throws IllegalArgumentException if cannot read image
      * @throws IllegalArgumentException if {@code filename} is {@code null}
      */
@@ -362,8 +362,8 @@ public final class Picture implements ActionListener {
      * Saves the picture to a file in a standard image format.
      * The filetype must be .png or .jpg.
      *
-     * @param filename the name of the file
-     * @throws IllegalArgumentException if {@code name} is {@code null}
+     * @param filename the id of the file
+     * @throws IllegalArgumentException if {@code id} is {@code null}
      */
     public void save(String filename) {
         if (filename == null) throw new IllegalArgumentException("argument to save() is null");

@@ -23,7 +23,7 @@ public class JDBC {
             /*//创建数据库hello
             stat.executeUpdate("create database hello");
             //创建表test
-            stat.executeUpdate("create table test(id int, name varchar(30))");
+            stat.executeUpdate("create table test(id int, id varchar(30))");
             //添加数据
             stat.executeUpdate("insert into test values(1, 'stalary')");
             stat.executeUpdate("insert into test values(2, 'zyw')");*/
@@ -34,8 +34,8 @@ public class JDBC {
             while (result.next()) {
                 // 按字段名获取数据
                 int id = result.getInt("id");
-                String name = result.getString("name");
-                System.out.println("id: " + id + " name: " + name);
+                String name = result.getString("id");
+                System.out.println("id: " + id + " id: " + name);
             }
         } catch (Exception e) {
             // 在获取驱动和连接数据库，以及执行sql时都有可能发生异常

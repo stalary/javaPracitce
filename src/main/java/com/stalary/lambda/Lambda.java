@@ -105,7 +105,7 @@ public class Lambda {
         }
 
         public String toString() {
-            return getClass().getSimpleName() + "[name=" + name + ",age=" + age + ",sex=" + sex + "]";
+            return getClass().getSimpleName() + "[id=" + name + ",age=" + age + ",sex=" + sex + "]";
         }
 
         @Override

@@ -46,6 +46,6 @@ public class User {
 
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + " " + "name: " + name + " " + "age: " + age + " " + "sex: " + sex;
+        return this.getClass().getSimpleName() + " " + "id: " + name + " " + "age: " + age + " " + "sex: " + sex;
     }
 }

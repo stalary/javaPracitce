@@ -160,7 +160,7 @@ public final class StdAudio {
      * Reads audio samples from a file (in .wav or .au format) and returns
      * them as a double array with values between -1.0 and +1.0.
      *
-     * @param  filename the name of the audio file
+     * @param  filename the id of the audio file
      * @return the array of samples
      */
     public static double[] read(String filename) {
@@ -215,7 +215,7 @@ public final class StdAudio {
     /**
      * Saves the double array as an audio file (using .wav or .au format).
      *
-     * @param  filename the name of the audio file
+     * @param  filename the id of the audio file
      * @param  samples the array of samples
      * @throws IllegalArgumentException if unable to save {@code filename}
      * @throws IllegalArgumentException if {@code samples} is {@code null}
@@ -259,7 +259,7 @@ public final class StdAudio {
     /**
      * Plays an audio file (in .wav, .mid, or .au format) in a background thread.
      *
-     * @param filename the name of the audio file
+     * @param filename the id of the audio file
      * @throws IllegalArgumentException if unable to play {@code filename}
      * @throws IllegalArgumentException if {@code filename} is {@code null}
      */
@@ -360,7 +360,7 @@ public final class StdAudio {
     /**
      * Loops an audio file (in .wav, .mid, or .au format) in a background thread.
      *
-     * @param filename the name of the audio file
+     * @param filename the id of the audio file
      * @throws IllegalArgumentException if {@code filename} is {@code null}
      */
     public static synchronized void loop(String filename) {

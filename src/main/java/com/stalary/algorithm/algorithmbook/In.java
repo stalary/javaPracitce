@@ -154,12 +154,12 @@ public final class In {
 
 
     /**
-     * Initializes an input stream from a filename or web page name.
+     * Initializes an input stream from a filename or web page id.
      *
-     * @param  name the filename or web page name
-     * @throws IllegalArgumentException if cannot open {@code name} as
+     * @param  name the filename or web page id
+     * @throws IllegalArgumentException if cannot open {@code id} as
      *         a file or URL
-     * @throws IllegalArgumentException if {@code name} is {@code null}
+     * @throws IllegalArgumentException if {@code id} is {@code null}
      */
     public In(String name) {
         if (name == null) throw new IllegalArgumentException("argument is null");
@@ -578,7 +578,7 @@ public final class In {
      * Reads all integers from a file and returns them as
      * an array of integers.
      *
-     * @param      filename the name of the file
+     * @param      filename the id of the file
      * @return     the integers in the file
      * @deprecated Replaced by {@code new In(filename)}.{@link #readAllInts()}.
      */
@@ -591,7 +591,7 @@ public final class In {
      * Reads all doubles from a file and returns them as
      * an array of doubles.
      *
-     * @param      filename the name of the file
+     * @param      filename the id of the file
      * @return     the doubles in the file
      * @deprecated Replaced by {@code new In(filename)}.{@link #readAllDoubles()}.
      */
@@ -604,7 +604,7 @@ public final class In {
      * Reads all strings from a file and returns them as
      * an array of strings.
      *
-     * @param      filename the name of the file
+     * @param      filename the id of the file
      * @return     the strings in the file
      * @deprecated Replaced by {@code new In(filename)}.{@link #readAllStrings()}.
      */

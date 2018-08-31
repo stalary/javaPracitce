@@ -37,7 +37,7 @@ import java.util.NoSuchElementException;
  *  64 bits at a time (as a {@code double} or {@code long}).
  *  <p>
  *  The binary input stream can be from standard input, a filename,
- *  a URL name, a Socket, or an InputStream.
+ *  a URL id, a Socket, or an InputStream.
  *  <p>
  *  All primitive types are assumed to be represented using their
  *  standard Java representations, in big-endian (most significant
@@ -108,9 +108,9 @@ public final class BinaryIn {
     }
 
     /**
-     * Initializes a binary input stream from a filename or URL name.
+     * Initializes a binary input stream from a filename or URL id.
      *
-     * @param name the name of the file or URL
+     * @param name the id of the file or URL
      */
     public BinaryIn(String name) {
 
@@ -366,7 +366,7 @@ public final class BinaryIn {
 
     /**
      * Unit tests the {@code BinaryIn} data type.
-     * Reads the name of a file or URL (first command-line argument)
+     * Reads the id of a file or URL (first command-line argument)
      * and writes it to a file (second command-line argument).
      *
      * @param args the command-line arguments

@@ -1340,7 +1340,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
      *
      * @param  x the center <em>x</em>-coordinate of the image
      * @param  y the center <em>y</em>-coordinate of the image
-     * @param  filename the name of the image/picture, e.g., "ball.gif"
+     * @param  filename the id of the image/picture, e.g., "ball.gif"
      * @throws IllegalArgumentException if the image filename is invalid
      */
     public static void picture(double x, double y, String filename) {
@@ -1365,7 +1365,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
      *
      * @param  x the center <em>x</em>-coordinate of the image
      * @param  y the center <em>y</em>-coordinate of the image
-     * @param  filename the name of the image/picture, e.g., "ball.gif"
+     * @param  filename the id of the image/picture, e.g., "ball.gif"
      * @param  degrees is the number of degrees to rotate counterclockwise
      * @throws IllegalArgumentException if the image filename is invalid
      */
@@ -1394,7 +1394,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
      *
      * @param  x the center <em>x</em>-coordinate of the image
      * @param  y the center <em>y</em>-coordinate of the image
-     * @param  filename the name of the image/picture, e.g., "ball.gif"
+     * @param  filename the id of the image/picture, e.g., "ball.gif"
      * @param  scaledWidth the width of the scaled image (in screen coordinates)
      * @param  scaledHeight the height of the scaled image (in screen coordinates)
      * @throws IllegalArgumentException if either {@code scaledWidth}
@@ -1428,7 +1428,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
      *
      * @param  x the center <em>x</em>-coordinate of the image
      * @param  y the center <em>y</em>-coordinate of the image
-     * @param  filename the name of the image/picture, e.g., "ball.gif"
+     * @param  filename the id of the image/picture, e.g., "ball.gif"
      * @param  scaledWidth the width of the scaled image (in screen coordinates)
      * @param  scaledHeight the height of the scaled image (in screen coordinates)
      * @param  degrees is the number of degrees to rotate counterclockwise
@@ -1606,7 +1606,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
      * The supported image formats are JPEG and PNG;
      * the filename suffix must be {@code .jpg} or {@code .png}.
      *
-     * @param  filename the name of the file with one of the required suffixes
+     * @param  filename the id of the file with one of the required suffixes
      */
     public static void save(String filename) {
         if (filename == null) throw new IllegalArgumentException();

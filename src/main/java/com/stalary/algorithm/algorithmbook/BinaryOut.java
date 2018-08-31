@@ -66,7 +66,7 @@ public final class BinaryOut {
 
     /**
      * Initializes a binary output stream from a file.
-     * @param filename the name of the file
+     * @param filename the id of the file
      */
     public BinaryOut(String filename) {
         try {

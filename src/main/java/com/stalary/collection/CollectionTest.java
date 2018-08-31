@@ -67,7 +67,7 @@ public class CollectionTest {
         //测试将Map装入List
         List<Map<String,Object>> mapList = new ArrayList<>();
         Map<String,Object> map = new HashMap<>();
-        map.put("name","stalary");
+        map.put("id","stalary");
         map.put("age",20);
         mapList.add(map);
         System.out.println(mapList);
@@ -189,7 +189,7 @@ public class CollectionTest {
         @Override
         public String toString() {
             return "User{" +
-                    "name='" + name + '\'' +
+                    "id='" + name + '\'' +
                     ", age=" + age +
                     '}';
         }
