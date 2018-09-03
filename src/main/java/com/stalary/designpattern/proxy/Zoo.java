@@ -6,7 +6,7 @@
 package com.stalary.designpattern.proxy;
 
 /**
- * Zoo
+ * Animal
  *
  * @author lirongqian
  * @since 2018/08/26
