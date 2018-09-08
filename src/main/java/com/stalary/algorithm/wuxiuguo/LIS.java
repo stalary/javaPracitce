@@ -7,7 +7,7 @@ package com.stalary.algorithm.wuxiuguo;
 
 /**
  * LIS
- * 最长子序列
+ * 最长递增子序列
  * @author lirongqian
  * @since 2018/06/20
  */
