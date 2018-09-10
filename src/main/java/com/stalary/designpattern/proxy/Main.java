@@ -6,7 +6,7 @@
 package com.stalary.designpattern.proxy;
 
 /**
- * Main
+ * Main2
  *
  * @author lirongqian
  * @since 2018/08/26

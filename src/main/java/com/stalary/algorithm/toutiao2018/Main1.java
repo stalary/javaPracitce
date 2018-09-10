@@ -8,7 +8,7 @@ package com.stalary.algorithm.toutiao2018;
 import java.util.*;
 
 /**
- * com.stalary.algorithm.toutiao2019.Main1
+ * com.stalary.algorithm.toutiao2019.Main
  *
  * @author lirongqian
  * @since 2018/08/11

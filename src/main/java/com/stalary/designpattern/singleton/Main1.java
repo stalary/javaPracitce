@@ -6,7 +6,7 @@
 package com.stalary.designpattern.singleton;
 
 /**
- * Main1
+ * Main
  *
  * @author lirongqian
  * @since 2018/08/27

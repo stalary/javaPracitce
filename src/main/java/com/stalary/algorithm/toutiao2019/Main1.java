@@ -7,7 +7,7 @@ package com.stalary.algorithm.toutiao2019; /**
 import java.util.Scanner;
 
 /**
- * com.stalary.algorithm.toutiao2019.Main1
+ * com.stalary.algorithm.toutiao2019.Main
  *
  * @author lirongqian
  * @since 2018/08/12

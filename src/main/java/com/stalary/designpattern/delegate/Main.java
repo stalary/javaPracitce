@@ -9,7 +9,7 @@ import com.stalary.designpattern.delegate.print.Elephant;
 import com.stalary.designpattern.delegate.print.Monkey;
 
 /**
- * Main
+ * Main2
  *
  * @author lirongqian
  * @since 2018/08/28

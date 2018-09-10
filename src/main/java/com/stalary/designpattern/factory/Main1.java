@@ -6,7 +6,7 @@
 package com.stalary.designpattern.factory;
 
 /**
- * Main1
+ * Main
  *
  * @author lirongqian
  * @since 2018/09/02
