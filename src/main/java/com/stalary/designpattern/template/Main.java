@@ -14,9 +14,10 @@ package com.stalary.designpattern.template;
 public class Main {
 
     public static void main(String[] args) {
-        Zoo zoo = new Zoo(new Bird());
-        zoo.see();
-        zoo.changeAnimal(new Tiger());
-        zoo.see();
+        Note code = new Code();
+        code.send("stalary");
+        System.out.println("----------------");
+        Note warn = new Warn();
+        warn.send("stalary");
     }
 }
