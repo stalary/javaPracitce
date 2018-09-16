@@ -6,7 +6,7 @@
 package com.stalary.designpattern.factory;
 
 /**
- * Main
+ * com.stalary.algorithm.aiqiyi.Main1
  *
  * @author lirongqian
  * @since 2018/09/02

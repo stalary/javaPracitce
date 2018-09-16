@@ -1,4 +1,4 @@
-/**
+package com.stalary; /**
  * @(#)Util.java, 2018-08-15.
  * <p>
  * Copyright 2018 Stalary.
@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.Map;
 
 /**
- * Util
+ * com.stalary.Util
  *
  * @author lirongqian
  * @since 2018/08/15
