@@ -5,7 +5,8 @@
  */
 package com.stalary.designpattern.callback;
 
-import org.springframework.util.StopWatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Main2
@@ -17,10 +18,10 @@ public class Main {
 
     public static void main(String[] args) {
         Task task = new ZooTask();
-        StopWatch sw = new StopWatch();
-        sw.start("task");
-        task.execute(() -> System.out.println("execute finish"));
-        sw.stop();
-        System.out.println(sw.prettyPrint());
+        ExecutorService executor = Executors.newCachedThreadPool();
+        executor.execute(() -> task.execute(() -> System.out.println("execute 1 finish")));
+        executor.execute(() -> task.execute(() -> System.out.println("execute 2 finish")));
+        executor.execute(() -> task.execute(() -> System.out.println("execute 3 finish")));
+
     }
 }
