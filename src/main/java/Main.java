@@ -1,30 +1,14 @@
-import com.alibaba.fastjson.JSONObject;
-import lombok.Data;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Stack;
 
 public class Main {
 
     public static void main(String[] args) {
-        List<FilterDTO> list = new ArrayList<>();
-        list.add(new FilterDTO(122L, true));
-        list.add(new FilterDTO(23132L, true));
-        list.add(new FilterDTO(2323L, false));
-        System.out.println(JSONObject.toJSON(list));
-    }
-
-    @Data
-    public static class FilterDTO {
-        private Long id;
-
-        private Boolean isLegal;
-
-        public FilterDTO(Long id, Boolean isLegal) {
-            this.id = id;
-            this.isLegal = isLegal;
-        }
-
+        Stack<Integer> stack = new Stack<>();
+        stack.push(1);
+        stack.push(4);
+        stack.push(2);
+        stack.push(3);
+        stack.push(6);
 
     }
 
